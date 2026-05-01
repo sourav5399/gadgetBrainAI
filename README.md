@@ -1,4 +1,4 @@
-# Product Compare Agent
+# Gadget Brain AI
 
 A small assistant that helps you choose between gadgets. You list candidate products; the model asks follow-up questions when budget, currency, usage, or category are unclear, then returns a structured recommendation.
 

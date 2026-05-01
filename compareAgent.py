@@ -88,7 +88,7 @@ def get_json_reply(client, messages, model=MODEL):
 def main():
     # Initial products input
     client = create_client()
-    print("Compare Agent: Hello! I'm here to help you choose the best product.\n What products are you considering?\n Enter the products separated by commas.")
+    print("GadgetBrain: Hello! I'm here to help you choose the best product.\n What products are you considering?\n Enter the products separated by commas.")
     raw_products = input("You: ")
     products = normalize_products(raw_products)
     first_user_message = build_initial_user_message(products)
@@ -101,7 +101,7 @@ def main():
 
         if status == "need_more_info":
             question = data.get("question", "Please provide more details.")
-            print(f"\nCompare Agent: {question}")
+            print(f"\nGadgetBrain: {question}")
             user_reply = input("You: ")
 
             # Keep conversation history
@@ -110,13 +110,13 @@ def main():
 
         elif status == "final_recommendation":
             recommendation = data.get("recommendation", "No recommendation provided.")
-            print("\nCompare Agent Recommendation:\n")
+            print("\nGadgetBrain Recommendation:\n")
             print(recommendation)
             break
 
         else:
             # Safety fallback if schema is wrong
-            print("\nCompare Agent returned unexpected format. Asking again...")
+            print("\nGadgetBrain returned unexpected format. Asking again...")
             messages.append({"role": "assistant", "content": json.dumps(data)})
             messages.append({
                 "role": "user",

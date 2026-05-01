@@ -73,8 +73,8 @@ def run_assistant_turn(client, model):
 
 
 def main():
-    st.set_page_config(page_title="Product Compare Agent", page_icon=":speech_balloon:")
-    st.title("Product Compare Agent")
+    st.set_page_config(page_title="Gadget Brain AI", page_icon=":speech_balloon:")
+    st.title("Gadget Brain")
     st.caption("Chat interface for product recommendations with follow-up questions.")
 
     init_state()
